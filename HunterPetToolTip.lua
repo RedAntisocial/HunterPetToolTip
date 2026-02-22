@@ -70,7 +70,7 @@ local PetFamilyData = {
 	-- [???] = { exotic = true }, -- Whiptail (Midnight, ID unknown)
 
 	-- Spirit Beast: exotic + rare world spawn
-    [46]  = { exotic = true, note = "NOTE_SPIRIT" }, -- Spirit Beast
+    [46] = { exotic = true, note = "NOTE_SPIRIT", note2 = "NOTE_FIREOWL" }, -- Spirit Beast
 
 	-- Skill requirements
     [296] = { note = "NOTE_BLOOD" }, -- Blood Beast
@@ -87,6 +87,21 @@ local COLOR_EXOTIC  = "|cFFFF6600" -- orange
 local COLOR_NOTE    = "|cFF00CCFF" -- blue
 local COLOR_RESET   = "|r"
 
+-- Spell IDs taught by taming tomes, for known/unknown check on local player
+local NoteSpellIDs = {
+    NOTE_UNDEAD     = { method = "quest",  id = 62255  },
+    NOTE_BLOOD      = { method = "quest",  id = 54753  },
+    NOTE_DRAGONKIN2 = { method = "quest",  id = 62254  },
+    NOTE_GARGON     = { method = "quest",  id = 61160  },
+    NOTE_OTTUK      = { method = "quest",  id = 66444  },
+    NOTE_DRAGONKIN  = { method = "quest",  id = 72094  },
+    NOTE_VORQUIN    = { method = "quest",  id = 72094  },
+	NOTE_FIREOWL    = { method = "quest",  id = 78842  },
+    NOTE_DINOMANCY  = { method = "spell",  id = 138430 },
+    NOTE_MECHA      = { method = "spell",  id = 205154 },
+    NOTE_FEATHER    = { method = "spell",  id = 242155 },
+}
+
 -- Returns true if the unit is a potential hunter pet
 local function IsLikelyHunterPet(unit)
     if not unit then return false end
@@ -100,7 +115,7 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self
 
 	-- print("Mouseover family:", UnitCreatureFamily("mouseover")) -- Pet Family Debug
 	-- print("CreatureType:", UnitCreatureType("mouseover")) -- Creature Type Debug
-	
+
     if not unit then return end
     if not IsLikelyHunterPet(unit) then return end
 
@@ -121,13 +136,24 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self
     if petData.exotic then
         self:AddLine(COLOR_EXOTIC .. L.EXOTIC .. COLOR_RESET)
     end
-
-	-- Special taming notes
-    if petData.note then
-        self:AddLine(COLOR_NOTE .. L[petData.note] .. COLOR_RESET)
-    end
-    if petData.note2 then
-        self:AddLine(COLOR_NOTE .. L[petData.note2] .. COLOR_RESET)
-    end
+	
+	local function GetKnownSuffix(noteKey)
+		local entry = NoteSpellIDs[noteKey]
+		if not entry then return "" end
+		local known
+		if entry.method == "quest" then
+			known = C_QuestLog.IsQuestFlaggedCompleted(entry.id)
+        elseif entry.method == "spell" then
+            known = C_SpellBook.IsSpellKnown(entry.id)
+		end
+		return known and " |cFF00FF00[Known]|r" or " |cFFFF0000[Unknown]|r"
+	end
+	
+	if petData.note then
+		self:AddLine(COLOR_NOTE .. L[petData.note] .. GetKnownSuffix(petData.note))
+	end
+	if petData.note2 then
+		self:AddLine(COLOR_NOTE .. L[petData.note2] .. GetKnownSuffix(petData.note2))
+	end
 
 end)

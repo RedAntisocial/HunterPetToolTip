@@ -11,17 +11,18 @@ local L = {
     ["enUS"] = {
         FAMILY          = "Pet Family: ",
         EXOTIC          = "Exotic (Beast Mastery only)",
-        NOTE_UNDEAD     = "Undead variants require: Simple Tome of Bone-Binding",
-        NOTE_OTTUK      = "Ottuk variants require: Ottuk Taming",
+        NOTE_UNDEAD     = "Undead require: Simple Tome of Bone-Binding",
+        NOTE_OTTUK      = "Ottuk require: Ottuk Taming",
         NOTE_VORQUIN    = "Vorquin require: How to Train a Dragonkin",
         NOTE_SPIRIT     = "Spirit Beast",
-        NOTE_GARGON     = "Gargon variants require: Gargon Training Manual",
+        NOTE_GARGON     = "Gargon require: Gargon Training Manual",
         NOTE_BLOOD      = "Requires: Blood-Soaked Tome of Dark Whispers",
         NOTE_DINOMANCY  = "Requires: Ancient Tome of Dinomancy",
         NOTE_FEATHER    = "Requires: Tome of the Hybrid Beast",
         NOTE_DRAGONKIN  = "Requires: How to Train a Dragonkin",
         NOTE_DRAGONKIN2 = "Cloud Serpents also require: How to School Your Serpent",
         NOTE_MECHA      = "Requires: Mecha-Bond Imprint Matrix",
+		NOTE_FIREOWL    = "Nah'qi (Fire Owl) requires: Mythic Fyrakk Mount",
     },
 
 }
