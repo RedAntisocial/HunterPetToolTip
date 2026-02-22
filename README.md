@@ -7,7 +7,7 @@
 
 ---
 
-**HunterPetToolTip** is a World of Warcraft addon that displays hunter pet family and taming requirement information directly in unit tooltips. Never wonder about a pet's family or level requirement again!
+**HunterPetToolTip** is a World of Warcraft addon that displays hunter pet family and taming requirement information directly in unit tooltips. I would love to figure out a method to show the EXACT source information for each tame (the initial target of this addon), but at present, when a player tames a pet it becomes a Beast (regardless of original typing) and loses it's originating NPC ID, instead being replaced with a standard "Hunter Pet" NPC ID. I'm still searching.
 
 ---
 
