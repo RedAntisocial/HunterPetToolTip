@@ -25,7 +25,7 @@
 
 ## Installation
 
-1. **Download** or **clone** this repository:
+1. **Download from CurseForge or Wago** or **clone** this repository:
    ```bash
    git clone https://github.com/RedAntisocial/HunterPetToolTip.git
    ```
@@ -43,7 +43,8 @@ Alternatively, use your favourite addon manager (Wago, CurseForge, etc).
 
 Once enabled, HunterPetToolTip automatically enhances pet tooltips with:
 - **Pet Family:** The family classification of the pet
-- **Taming Level:** The minimum hunter level required to tame it
+- **Taming Classification:** Exotic, or Spirit Beast
+- **Extra Notes** Any further special requirements (Tomes etc.) to tame it
 
 Simply hover over any tameable creature and the additional information will appear in the tooltip.
 
@@ -58,12 +59,12 @@ Simply hover over any tameable creature and the additional information will appe
 
 ## Contributing
 
-Contributions and feature requests are welcome!
+Contributions, translations, and feature requests are welcome!
 
 - Submit issues or pull requests via GitHub.
 - Follow Blizzard's Lua API standards.
 - Test changes with `/reload` and enable script errors using `/console scriptErrors 1`.
-- Ensure compatibility with *Retail*.
+- Ensure compatibility with whatever the current *Retail* version is.
 
 ---
 
