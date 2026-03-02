@@ -23,6 +23,7 @@ local L = {
         NOTE_DRAGONKIN2 = "Cloud Serpents also require: How to School Your Serpent",
         NOTE_MECHA      = "Requires: Mecha-Bond Imprint Matrix",
 		NOTE_FIREOWL    = "Nah'qi (Fire Owl) requires: Mythic Fyrakk Mount",
+        NOTE_FLORAFAUN  = "Florafauna require: Trials of the Florafaun Hunter",
     },
 
 }

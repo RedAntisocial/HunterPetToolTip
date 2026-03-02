@@ -18,7 +18,7 @@ local PetFamilyData = {
     [26]  = { note = "NOTE_UNDEAD" }, -- Bird of Prey
     [5]   = {}, -- Boar
     [298] = {}, -- Camel
-    [7]   = {}, -- Carrion Bird
+    [7]   = { note = "NOTE_FLORAFAUN" }, -- Carrion Bird
     [2]   = {}, -- Cat
     [299] = {}, -- Courser
     [8]   = {}, -- Crab
@@ -27,23 +27,23 @@ local PetFamilyData = {
     [50]  = {}, -- Fox
     [9]   = { note = "NOTE_UNDEAD" }, -- Gorilla
     [129] = {}, -- Gruffhorn
-    [291] = {}, -- Hopper
+    [291] = { note = "NOTE_FLORAFAUN" }, -- Hopper
     [52]  = { note = "NOTE_UNDEAD" }, -- Hound
-    [68]  = {}, -- Hydra
+    [68]  = { note = "NOTE_FLORAFAUN" }, -- Hydra
     [25]  = {}, -- Hyena
     [288] = {}, -- Lizard
     [300] = { note = "NOTE_UNDEAD" }, -- Mammoth
     [51]  = {}, -- Monkey
     [37]  = {}, -- Moth
     [157] = {}, -- Oxen
-    [11]  = { note = "NOTE_UNDEAD" }, -- Raptor
+    [11]  = { note = "NOTE_UNDEAD", note2 = "NOTE_FLORAFAUN" }, -- Raptor
     [31]  = {}, -- Ravager
     [34]  = {}, -- Ray
     [150] = {}, -- Riverbeast
     [127] = { note = "NOTE_OTTUK" }, -- Rodent
-    [156] = {}, -- Scalehide
+    [156] = { note = "NOTE_FLORAFAUN" }, -- Scalehide
     [20]  = {}, -- Scorpid
-    [35]  = {}, -- Serpent
+    [35]  = { note = "NOTE_FLORAFAUN" }, -- Serpent
     [3]   = {}, -- Spider
     [33]  = {}, -- Sporebat
     [151] = { note = "NOTE_VORQUIN" }, -- Stag
@@ -61,20 +61,20 @@ local PetFamilyData = {
     [38]  = { exotic = true }, -- Chimaera
     [43]  = {}, -- Clefthoof (not exotic)
     [45]  = { exotic = true }, -- Core Hound
-    [39]  = { exotic = true, note = "NOTE_UNDEAD" }, -- Devilsaur
+    [39]  = { exotic = true, note = "NOTE_UNDEAD", note2 = "NOTE_FLORAFAUN" }, -- Devilsaur
     [290] = { exotic = true }, -- Pterrordax
     [55]  = { exotic = true }, -- Shale Beast
     [128] = { exotic = true, note = "NOTE_GARGON" }, -- Stone Hound
     [126] = { exotic = true }, -- Water Strider
     [42]  = { exotic = true }, -- Worm
-	-- [???] = { exotic = true }, -- Whiptail (Midnight, ID unknown)
+	[315] = { exotic = true }, -- Whiptail
 
 	-- Spirit Beast: exotic + rare world spawn
     [46] = { exotic = true, note = "NOTE_SPIRIT", note2 = "NOTE_FIREOWL" }, -- Spirit Beast
 
 	-- Skill requirements
     [296] = { note = "NOTE_BLOOD" }, -- Blood Beast
-    [138] = { note = "NOTE_DINOMANCY" }, -- Direhorn
+    [138] = { note = "NOTE_DINOMANCY", note2 = "NOTE_FLORAFAUN" }, -- Direhorn
     [160] = { note = "NOTE_FEATHER" }, -- Feathermane
     [303] = { note = "NOTE_DRAGONKIN", note2 = "NOTE_DRAGONKIN2" }, -- Lesser Dragonkin
     [154] = { note = "NOTE_MECHA" }, -- Mechanical
