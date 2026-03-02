@@ -89,14 +89,15 @@ local COLOR_RESET   = "|r"
 
 -- Spell IDs taught by taming tomes, for known/unknown check on local player
 local NoteSpellIDs = {
-    NOTE_UNDEAD     = { method = "quest",  id = 62255  },
-    NOTE_BLOOD      = { method = "quest",  id = 54753  },
-    NOTE_DRAGONKIN2 = { method = "quest",  id = 62254  },
-    NOTE_GARGON     = { method = "quest",  id = 61160  },
-    NOTE_OTTUK      = { method = "quest",  id = 66444  },
-    NOTE_DRAGONKIN  = { method = "quest",  id = 72094  },
-    NOTE_VORQUIN    = { method = "quest",  id = 72094  },
-	NOTE_FIREOWL    = { method = "quest",  id = 78842  },
+    NOTE_UNDEAD     = { method = "quest",  id = 62255 },
+    NOTE_BLOOD      = { method = "quest",  id = 54753 },
+    NOTE_DRAGONKIN2 = { method = "quest",  id = 62254 },
+    NOTE_GARGON     = { method = "quest",  id = 61160 },
+    NOTE_OTTUK      = { method = "quest",  id = 66444 },
+    NOTE_DRAGONKIN  = { method = "quest",  id = 72094 },
+    NOTE_VORQUIN    = { method = "quest",  id = 72094 },
+	NOTE_FIREOWL    = { method = "quest",  id = 78842 },
+    NOTE_FLORAFAUN  = { method = "quest",  id = 87421 },
     NOTE_DINOMANCY  = { method = "spell",  id = 138430 },
     NOTE_MECHA      = { method = "spell",  id = 205154 },
     NOTE_FEATHER    = { method = "spell",  id = 242155 },
