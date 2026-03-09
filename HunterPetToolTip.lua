@@ -103,36 +103,26 @@ local NoteSpellIDs = {
     NOTE_FEATHER    = { method = "spell",  id = 242155 },
 }
 
--- Returns true if the unit is a potential hunter pet
-local function IsLikelyHunterPet(unit)
-    if not unit then return false end
-    if UnitIsPlayer(unit) then return false end
-    return UnitCreatureFamily(unit) ~= nil
-end
-
 -- Hook the game tooltip
 TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self, data)
     local unit = "mouseover"
 
 	-- print("Mouseover family:", UnitCreatureFamily("mouseover")) -- Pet Family Debug
 	-- print("CreatureType:", UnitCreatureType("mouseover")) -- Creature Type Debug
-
-    if not unit then return end
-    if not IsLikelyHunterPet(unit) then return end
+	-- print("UnitClass:", UnitClassification("mouseover")) -- Unit Classification Debug
+	
+	-- Early exit for things that contain secrets.
+    if not unit or UnitIsPlayer(unit) or UnitClassification(unit) == "minus" then return end
 
     local familyName, familyID = UnitCreatureFamily(unit)
-	
 	-- print("familyName:", familyName, "familyID:", familyID) -- Debug Family ID
 	if not familyName or not familyID then return end
-
+    if not familyID then return end
     local petData = PetFamilyData[familyID]
     if not petData then return end
-
     local L = HunterPetTip_L
-
 	-- Family line (familyName is already localized by the client)
     self:AddLine(COLOR_FAMILY .. L.FAMILY .. familyName .. COLOR_RESET)
-
 	-- Exotic flag
     if petData.exotic then
         self:AddLine(COLOR_EXOTIC .. L.EXOTIC .. COLOR_RESET)
@@ -156,5 +146,4 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self
 	if petData.note2 then
 		self:AddLine(COLOR_NOTE .. L[petData.note2] .. GetKnownSuffix(petData.note2))
 	end
-
 end)
