@@ -114,15 +114,18 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self
 	-- Early exit for things that contain secrets.
     if not unit or UnitIsPlayer(unit) or UnitClassification(unit) == "minus" then return end
 
-    local familyName, familyID = UnitCreatureFamily(unit)
+	local ok, familyName, familyID = pcall(UnitCreatureFamily, unit)
 	-- print("familyName:", familyName, "familyID:", familyID) -- Debug Family ID
-	if not familyName or not familyID then return end
-    if not familyID then return end
+	if not ok or not familyName or not familyID then return end
+	
     local petData = PetFamilyData[familyID]
     if not petData then return end
+	
     local L = HunterPetTip_L
+	
 	-- Family line (familyName is already localized by the client)
     self:AddLine(COLOR_FAMILY .. L.FAMILY .. familyName .. COLOR_RESET)
+	
 	-- Exotic flag
     if petData.exotic then
         self:AddLine(COLOR_EXOTIC .. L.EXOTIC .. COLOR_RESET)

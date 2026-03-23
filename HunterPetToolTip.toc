@@ -2,7 +2,7 @@
 ## Title: HunterPetToolTip
 ## Notes: Adds family and taming requirement info to hunter pet tooltips
 ## Author: Periago - Dalaran
-## Version: 1.0.3
+## Version: 1.0.4
 ## IconTexture: Interface\Icons\ability_hunter_pet_wolf
 ## X-Curse-Project-ID: 
 ## X-WoWI-ID: 
