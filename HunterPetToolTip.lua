@@ -116,10 +116,11 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self
 
 	local ok, familyName, familyID = pcall(UnitCreatureFamily, unit)
 	-- print("familyName:", familyName, "familyID:", familyID) -- Debug Family ID
-	if not ok or not familyName or not familyID then return end
+	if not ok or type(familyName) ~= "string" or type(familyID) ~= "number" then return end
 	
-    local petData = PetFamilyData[familyID]
-    if not petData then return end
+    -- using okiedokie to avoid shadowing ok :) Blame Fallout, not me.
+    local okiedokie, petData = pcall(function() return PetFamilyData[familyID] end)
+    if not okiedokie or not petData then return end
 	
     local L = HunterPetTip_L
 	
